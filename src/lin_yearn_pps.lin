@@ -1,0 +1,12 @@
+@LIN:L1c:0.2
+@YEARN_V2_PPS{
+  version=1
+  repo="yearn/yearn-vaults"
+  source="contracts/Vault.vy _calculateLockedProfit/_shareValue/pricePerShare"
+  license="AGPL-3.0-or-later"
+  commit="97ca1b2e4fcf20f4be0ff456dabd020bfeb6697b"
+  profile="LINVM-1"
+  class="EXPERIMENTAL"
+  purpose="uint64_scale_yearn_v2_locked_profit_price_per_share_128bit"
+  note="Not mainnet uint256. Storage now/lastReport/lockedProfit/idle/debt/supply/decimals are arguments. Linear unlock of harvest profit; empty vault is 1:1 shares=amount (no ERC-4626 virtual offset). DEGRADATION_COEFFICIENT=1e18 fits i64; 128-bit floor muldiv; now<lastReport and overflow fail-close."
+}
